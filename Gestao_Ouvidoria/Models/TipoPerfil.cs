@@ -14,7 +14,7 @@ namespace Gestao_Ouvidoria.Models
         Pai_de_Aluno,
         [Display(Name = "Professor(a)")]
         Professor,
-        [Display(Name = "Funcionário")]
+        [Display(Name = "Funcionário(a)")]
         Funcionario,
         Visitante
     }

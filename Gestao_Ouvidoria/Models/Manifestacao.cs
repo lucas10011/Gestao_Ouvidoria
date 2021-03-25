@@ -33,8 +33,10 @@ namespace Gestao_Ouvidoria.Models
         [Display(Name = "Manifestacao")]
         public string ManifestacaoConteudo { get; set; }
 
+        [Display(Name = "Cadastrado em")]
         public DateTime Created { get; set; }
 
+        [Display(Name = "Modificado em")]
         public DateTime Modified { get; set; }
 
         [Required]

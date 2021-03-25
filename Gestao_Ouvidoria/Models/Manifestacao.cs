@@ -11,6 +11,7 @@ namespace Gestao_Ouvidoria.Models
     public class Manifestacao
     {
         [Key]
+        [Display(Name = "Protocolo")]
         public int Id { get; set; }
 
         [Required(ErrorMessage = "Preencha o Campus.")]

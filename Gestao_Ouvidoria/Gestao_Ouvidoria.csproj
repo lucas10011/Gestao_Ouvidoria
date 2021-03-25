@@ -139,6 +139,10 @@
     <Compile Include="Migrations\202103251914001_Add_Created_Modified.designer.cs">
       <DependentUpon>202103251914001_Add_Created_Modified.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202103251935541_Add_Tipo_Status.cs" />
+    <Compile Include="Migrations\202103251935541_Add_Tipo_Status.designer.cs">
+      <DependentUpon>202103251935541_Add_Tipo_Status.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Manifestacao.cs" />
     <Compile Include="Models\OuvidoriaContext.cs" />
@@ -146,6 +150,7 @@
     <Compile Include="Models\Setor.cs" />
     <Compile Include="Models\TipoPerfil.cs" />
     <Compile Include="Models\TipoSolicitacao.cs" />
+    <Compile Include="Models\TipoStatus.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -207,6 +212,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202103251914001_Add_Created_Modified.resx">
       <DependentUpon>202103251914001_Add_Created_Modified.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202103251935541_Add_Tipo_Status.resx">
+      <DependentUpon>202103251935541_Add_Tipo_Status.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

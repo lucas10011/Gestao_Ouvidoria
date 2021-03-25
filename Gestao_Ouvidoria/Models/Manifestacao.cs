@@ -40,6 +40,9 @@ namespace Gestao_Ouvidoria.Models
         [Display(Name = "Modificado em")]
         public DateTime Modified { get; set; }
 
+        [Display(Name = "Status")]
+        public TipoStatus Status { get; set; }
+
         [Required]
         [ForeignKey("Perfil")]
         public int IdPerfil { get; set; }

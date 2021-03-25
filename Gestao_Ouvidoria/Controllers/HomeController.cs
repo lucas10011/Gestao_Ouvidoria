@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Gestao_Ouvidoria.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,6 +9,7 @@ namespace Gestao_Ouvidoria.Controllers
 {
     public class HomeController : Controller
     {
+        private OuvidoriaContext db = new OuvidoriaContext();
         public ActionResult Index()
         {
             return View();

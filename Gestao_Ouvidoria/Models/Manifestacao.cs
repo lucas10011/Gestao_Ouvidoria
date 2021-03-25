@@ -33,6 +33,10 @@ namespace Gestao_Ouvidoria.Models
         [Display(Name = "Manifestacao")]
         public string ManifestacaoConteudo { get; set; }
 
+        public DateTime Created { get; set; }
+
+        public DateTime Modified { get; set; }
+
         [Required]
         [ForeignKey("Perfil")]
         public int IdPerfil { get; set; }

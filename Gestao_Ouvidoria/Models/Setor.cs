@@ -11,6 +11,7 @@ namespace Gestao_Ouvidoria.Models
         Centro_de_Atendimento,
         Financeiro,
         Secretaria,
+        Coordenacao,
         Almoxarifado
     }
 }

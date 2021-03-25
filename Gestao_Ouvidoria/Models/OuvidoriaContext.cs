@@ -8,7 +8,7 @@ namespace Gestao_Ouvidoria.Models
 {
     public class OuvidoriaContext : DbContext
     {
-        public OuvidoriaContext() : base("Name=Ouvidoria_db")
+        public OuvidoriaContext() : base("Name=GestaoOuvidoria_db")
         {
             Database.SetInitializer<OuvidoriaContext>(
                 new CreateDatabaseIfNotExists<OuvidoriaContext>());

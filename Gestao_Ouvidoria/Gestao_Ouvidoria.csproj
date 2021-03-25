@@ -135,6 +135,7 @@
     <Compile Include="Models\OuvidoriaContext.cs" />
     <Compile Include="Models\Perfil.cs" />
     <Compile Include="Models\Setor.cs" />
+    <Compile Include="Models\TipoPerfil.cs" />
     <Compile Include="Models\TipoSolicitacao.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

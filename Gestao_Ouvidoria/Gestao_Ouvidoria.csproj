@@ -131,6 +131,8 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\CssTableHelper.cs" />
+    <Compile Include="Helpers\EnumHelper.cs" />
     <Compile Include="Migrations\202103251749497_InitialCreate.cs" />
     <Compile Include="Migrations\202103251749497_InitialCreate.designer.cs">
       <DependentUpon>202103251749497_InitialCreate.cs</DependentUpon>
@@ -143,7 +145,13 @@
     <Compile Include="Migrations\202103251935541_Add_Tipo_Status.designer.cs">
       <DependentUpon>202103251935541_Add_Tipo_Status.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202103252119280_Alteracao-tipo-Curso-e-Campus.cs" />
+    <Compile Include="Migrations\202103252119280_Alteracao-tipo-Curso-e-Campus.designer.cs">
+      <DependentUpon>202103252119280_Alteracao-tipo-Curso-e-Campus.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Campus.cs" />
+    <Compile Include="Models\Curso.cs" />
     <Compile Include="Models\Manifestacao.cs" />
     <Compile Include="Models\OuvidoriaContext.cs" />
     <Compile Include="Models\Perfil.cs" />
@@ -162,6 +170,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Imgs\logo.png" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
@@ -215,6 +224,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202103251935541_Add_Tipo_Status.resx">
       <DependentUpon>202103251935541_Add_Tipo_Status.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202103252119280_Alteracao-tipo-Curso-e-Campus.resx">
+      <DependentUpon>202103252119280_Alteracao-tipo-Curso-e-Campus.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

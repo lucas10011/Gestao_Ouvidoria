@@ -12,7 +12,12 @@ namespace Gestao_Ouvidoria.Controllers
         private OuvidoriaContext db = new OuvidoriaContext();
         public ActionResult Index()
         {
-            return View();
+            ViewBag.Respondida = db.Manifestacoes.Where(a => a.Status == TipoStatus.Respondida).ToList().Count;
+            ViewBag.Vencida = db.Manifestacoes.Where(a => a.Status == TipoStatus.Vencida).ToList().Count;
+            ViewBag.Pendente = db.Manifestacoes.Where(a => a.Status == TipoStatus.Pendente).ToList().Count;
+            ViewBag.Excluida = db.Manifestacoes.Where(a => a.Status == TipoStatus.Excluida).ToList().Count;
+            ViewBag.Total = db.Manifestacoes.ToList().Count;
+            return View(db.Manifestacoes.ToList());
         }
 
         public ActionResult About()
@@ -28,5 +33,10 @@ namespace Gestao_Ouvidoria.Controllers
 
             return View();
         }
+
+
+
+
     }
+
 }

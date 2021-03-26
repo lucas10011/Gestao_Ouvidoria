@@ -82,3 +82,4 @@ C:\Users\Lucas\Desktop\testeaptidao\Gestao_Ouvidoria\obj\Debug\Gestao_Ouvidoria.
 C:\Users\Lucas\Desktop\testeaptidao\Gestao_Ouvidoria\obj\Debug\Gestao_Ouvidoria.csproj.GenerateResource.cache
 C:\Users\Lucas\Desktop\testeaptidao\Gestao_Ouvidoria\obj\Debug\Gestao_Ouvidoria.Migrations.Add_Created_Modified.resources
 C:\Users\Lucas\Desktop\testeaptidao\Gestao_Ouvidoria\obj\Debug\Gestao_Ouvidoria.Migrations.Add_Tipo_Status.resources
+C:\Users\Lucas\Desktop\testeaptidao\Gestao_Ouvidoria\obj\Debug\Gestao_Ouvidoria.Migrations.AlteracaotipoCursoeCampus.resources

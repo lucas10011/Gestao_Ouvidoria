@@ -15,10 +15,10 @@ namespace Gestao_Ouvidoria.Models
         public int Id { get; set; }
 
         [Required(ErrorMessage = "Preencha o Campus.")]
-        public string Campus { get; set; }
+        public Campus Campus { get; set; }
 
         [Required(ErrorMessage = "Preencha o Curso.")]
-        public string Curso { get; set; }
+        public Curso Curso { get; set; }
 
         [Required(ErrorMessage = "Preencha o tipo de solicitação.")]
         [Display(Name = "Tipo de Solicitação")]

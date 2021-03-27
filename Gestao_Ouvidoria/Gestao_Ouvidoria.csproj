@@ -128,6 +128,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ManifestacaoController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -148,6 +149,14 @@
     <Compile Include="Migrations\202103252119280_Alteracao-tipo-Curso-e-Campus.cs" />
     <Compile Include="Migrations\202103252119280_Alteracao-tipo-Curso-e-Campus.designer.cs">
       <DependentUpon>202103252119280_Alteracao-tipo-Curso-e-Campus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202103262246449_manifestacoes-perfil.cs" />
+    <Compile Include="Migrations\202103262246449_manifestacoes-perfil.designer.cs">
+      <DependentUpon>202103262246449_manifestacoes-perfil.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202103262251305_alteracao-manifestacaos.cs" />
+    <Compile Include="Migrations\202103262251305_alteracao-manifestacaos.designer.cs">
+      <DependentUpon>202103262251305_alteracao-manifestacaos.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Campus.cs" />
@@ -198,6 +207,11 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Manifestacao\Create.cshtml" />
+    <Content Include="Views\Manifestacao\Delete.cshtml" />
+    <Content Include="Views\Manifestacao\Details.cshtml" />
+    <Content Include="Views\Manifestacao\Edit.cshtml" />
+    <Content Include="Views\Manifestacao\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -227,6 +241,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202103252119280_Alteracao-tipo-Curso-e-Campus.resx">
       <DependentUpon>202103252119280_Alteracao-tipo-Curso-e-Campus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202103262246449_manifestacoes-perfil.resx">
+      <DependentUpon>202103262246449_manifestacoes-perfil.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202103262251305_alteracao-manifestacaos.resx">
+      <DependentUpon>202103262251305_alteracao-manifestacaos.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

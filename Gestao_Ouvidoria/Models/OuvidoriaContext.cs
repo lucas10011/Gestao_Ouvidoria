@@ -8,7 +8,8 @@ namespace Gestao_Ouvidoria.Models
 {
     public class OuvidoriaContext : DbContext
     {
-        public OuvidoriaContext() : base("Name=GestaoOuvidoria_db")
+       
+        public OuvidoriaContext() : base("Name=DefaultConnection")
         {
             Database.SetInitializer<OuvidoriaContext>(
                 new CreateDatabaseIfNotExists<OuvidoriaContext>());
@@ -19,5 +20,6 @@ namespace Gestao_Ouvidoria.Models
 
         public DbSet<Manifestacao> Manifestacoes { get; set; }
 
+        public System.Data.Entity.DbSet<Gestao_Ouvidoria.Models.Perfil> Perfils { get; set; }
     }
 }

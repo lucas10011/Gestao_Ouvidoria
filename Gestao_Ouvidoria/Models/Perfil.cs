@@ -29,5 +29,8 @@ namespace Gestao_Ouvidoria.Models
         [Required(ErrorMessage = "Preencha o Tipo Perfil")]
         public TipoPerfil TipoPerfil { get; set; }
 
+  
+        public virtual List<Manifestacao> Manifestacoes { get; set; }
+
     }
 }

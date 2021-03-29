@@ -48,5 +48,7 @@ namespace Gestao_Ouvidoria.Models
         public int IdPerfil { get; set; }
 
         public virtual Perfil Perfil { get; set; }
+
+        public virtual List<RespostaManifestacao> RespostaManifestacoes { get; set; }
     }
 }

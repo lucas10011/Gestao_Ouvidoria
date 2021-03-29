@@ -17,7 +17,12 @@ namespace Gestao_Ouvidoria.Controllers
         // GET: Manifestacao
         public ActionResult Index()
         {
-            var manifestacoes = db.Manifestacoes.Include(m => m.Perfil);
+            var manifestacoes = db.Manifestacao.Include(m => m.Perfil);
+            ViewBag.Respondida = db.Manifestacao.Where(a => a.Status == TipoStatus.Respondida).ToList().Count;
+            ViewBag.Vencida = db.Manifestacao.Where(a => a.Status == TipoStatus.Vencida).ToList().Count;
+            ViewBag.Pendente = db.Manifestacao.Where(a => a.Status == TipoStatus.Pendente).ToList().Count;
+            ViewBag.Excluida = db.Manifestacao.Where(a => a.Status == TipoStatus.Excluida).ToList().Count;
+            ViewBag.Total = db.Manifestacao.ToList().Count;
             return View(manifestacoes.ToList());
         }
 
@@ -28,7 +33,9 @@ namespace Gestao_Ouvidoria.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Manifestacao manifestacao = db.Manifestacoes.Find(id);
+          
+            Manifestacao manifestacao = db.Manifestacao.Find(id);
+           
             if (manifestacao == null)
             {
                 return HttpNotFound();
@@ -39,7 +46,7 @@ namespace Gestao_Ouvidoria.Controllers
         // GET: Manifestacao/Create
         public ActionResult Create()
         {
-            ViewBag.IdPerfil = new SelectList(db.Perfils, "Id", "Nome");
+            ViewBag.IdPerfil = new SelectList(db.Perfil, "Id", "Nome");
             return View();
         }
 
@@ -52,12 +59,12 @@ namespace Gestao_Ouvidoria.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Manifestacoes.Add(manifestacao);
+                db.Manifestacao.Add(manifestacao);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            ViewBag.IdPerfil = new SelectList(db.Perfils, "Id", "Nome", manifestacao.IdPerfil);
+            ViewBag.IdPerfil = new SelectList(db.Perfil, "Id", "Nome", manifestacao.IdPerfil);
             return View(manifestacao);
         }
 
@@ -68,12 +75,12 @@ namespace Gestao_Ouvidoria.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Manifestacao manifestacao = db.Manifestacoes.Find(id);
+            Manifestacao manifestacao = db.Manifestacao.Find(id);
             if (manifestacao == null)
             {
                 return HttpNotFound();
             }
-            ViewBag.IdPerfil = new SelectList(db.Perfils, "Id", "Nome", manifestacao.IdPerfil);
+            ViewBag.IdPerfil = new SelectList(db.Perfil, "Id", "Nome", manifestacao.IdPerfil);
             return View(manifestacao);
         }
 
@@ -90,7 +97,7 @@ namespace Gestao_Ouvidoria.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.IdPerfil = new SelectList(db.Perfils, "Id", "Nome", manifestacao.IdPerfil);
+            ViewBag.IdPerfil = new SelectList(db.Perfil, "Id", "Nome", manifestacao.IdPerfil);
             return View(manifestacao);
         }
 
@@ -101,7 +108,7 @@ namespace Gestao_Ouvidoria.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Manifestacao manifestacao = db.Manifestacoes.Find(id);
+            Manifestacao manifestacao = db.Manifestacao.Find(id);
             if (manifestacao == null)
             {
                 return HttpNotFound();
@@ -114,8 +121,8 @@ namespace Gestao_Ouvidoria.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Manifestacao manifestacao = db.Manifestacoes.Find(id);
-            db.Manifestacoes.Remove(manifestacao);
+            Manifestacao manifestacao = db.Manifestacao.Find(id);
+            db.Manifestacao.Remove(manifestacao);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

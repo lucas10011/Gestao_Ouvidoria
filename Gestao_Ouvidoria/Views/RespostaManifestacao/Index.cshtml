@@ -1,0 +1,45 @@
+﻿@model IEnumerable<Gestao_Ouvidoria.Models.RespostaManifestacao>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Manifestacao.Assunto)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ManifestacaoResposta)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Arquivo)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Manifestacao.Assunto)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ManifestacaoResposta)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Arquivo)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>

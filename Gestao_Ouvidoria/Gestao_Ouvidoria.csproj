@@ -129,6 +129,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManifestacaoController.cs" />
+    <Compile Include="Controllers\RespostaManifestacaoController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -158,12 +159,25 @@
     <Compile Include="Migrations\202103262251305_alteracao-manifestacaos.designer.cs">
       <DependentUpon>202103262251305_alteracao-manifestacaos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202103271754241_Criacao-Tabela-RespostaManifestacao.cs" />
+    <Compile Include="Migrations\202103271754241_Criacao-Tabela-RespostaManifestacao.designer.cs">
+      <DependentUpon>202103271754241_Criacao-Tabela-RespostaManifestacao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202103282224492_add-ArquivoPost-model-RespostaManifestacao.cs" />
+    <Compile Include="Migrations\202103282224492_add-ArquivoPost-model-RespostaManifestacao.designer.cs">
+      <DependentUpon>202103282224492_add-ArquivoPost-model-RespostaManifestacao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202103282236449_add-ArquivoPost2-model-RespostaManifestacao.cs" />
+    <Compile Include="Migrations\202103282236449_add-ArquivoPost2-model-RespostaManifestacao.designer.cs">
+      <DependentUpon>202103282236449_add-ArquivoPost2-model-RespostaManifestacao.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Campus.cs" />
     <Compile Include="Models\Curso.cs" />
     <Compile Include="Models\Manifestacao.cs" />
     <Compile Include="Models\OuvidoriaContext.cs" />
     <Compile Include="Models\Perfil.cs" />
+    <Compile Include="Models\RespostaManifestacao.cs" />
     <Compile Include="Models\Setor.cs" />
     <Compile Include="Models\TipoPerfil.cs" />
     <Compile Include="Models\TipoSolicitacao.cs" />
@@ -212,6 +226,12 @@
     <Content Include="Views\Manifestacao\Details.cshtml" />
     <Content Include="Views\Manifestacao\Edit.cshtml" />
     <Content Include="Views\Manifestacao\Index.cshtml" />
+    <Content Include="Views\RespostaManifestacao\Create.cshtml" />
+    <Content Include="Views\RespostaManifestacao\Delete.cshtml" />
+    <Content Include="Views\RespostaManifestacao\Details.cshtml" />
+    <Content Include="Views\RespostaManifestacao\Edit.cshtml" />
+    <Content Include="Views\RespostaManifestacao\Index.cshtml" />
+    <Content Include="Views\RespostaManifestacao\Encaminhar.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -247,6 +267,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202103262251305_alteracao-manifestacaos.resx">
       <DependentUpon>202103262251305_alteracao-manifestacaos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202103271754241_Criacao-Tabela-RespostaManifestacao.resx">
+      <DependentUpon>202103271754241_Criacao-Tabela-RespostaManifestacao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202103282224492_add-ArquivoPost-model-RespostaManifestacao.resx">
+      <DependentUpon>202103282224492_add-ArquivoPost-model-RespostaManifestacao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202103282236449_add-ArquivoPost2-model-RespostaManifestacao.resx">
+      <DependentUpon>202103282236449_add-ArquivoPost2-model-RespostaManifestacao.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

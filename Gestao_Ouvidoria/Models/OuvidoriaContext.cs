@@ -18,8 +18,10 @@ namespace Gestao_Ouvidoria.Models
             Database.Log = d => System.Diagnostics.Debug.WriteLine(d);
         }
 
-        public DbSet<Manifestacao> Manifestacoes { get; set; }
+        public DbSet<Manifestacao> Manifestacao { get; set; }
 
-        public System.Data.Entity.DbSet<Gestao_Ouvidoria.Models.Perfil> Perfils { get; set; }
+        public System.Data.Entity.DbSet<Gestao_Ouvidoria.Models.Perfil> Perfil { get; set; }
+
+        public System.Data.Entity.DbSet<Gestao_Ouvidoria.Models.RespostaManifestacao> RespostaManifestacao { get; set; }
     }
 }

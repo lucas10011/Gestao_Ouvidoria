@@ -12,12 +12,12 @@ namespace Gestao_Ouvidoria.Controllers
         private OuvidoriaContext db = new OuvidoriaContext();
         public ActionResult Index()
         {
-            ViewBag.Respondida = db.Manifestacoes.Where(a => a.Status == TipoStatus.Respondida).ToList().Count;
-            ViewBag.Vencida = db.Manifestacoes.Where(a => a.Status == TipoStatus.Vencida).ToList().Count;
-            ViewBag.Pendente = db.Manifestacoes.Where(a => a.Status == TipoStatus.Pendente).ToList().Count;
-            ViewBag.Excluida = db.Manifestacoes.Where(a => a.Status == TipoStatus.Excluida).ToList().Count;
-            ViewBag.Total = db.Manifestacoes.ToList().Count;
-            return View(db.Manifestacoes.ToList());
+            ViewBag.Respondida = db.Manifestacao.Where(a => a.Status == TipoStatus.Respondida).ToList().Count;
+            ViewBag.Vencida = db.Manifestacao.Where(a => a.Status == TipoStatus.Vencida).ToList().Count;
+            ViewBag.Pendente = db.Manifestacao.Where(a => a.Status == TipoStatus.Pendente).ToList().Count;
+            ViewBag.Excluida = db.Manifestacao.Where(a => a.Status == TipoStatus.Excluida).ToList().Count;
+            ViewBag.Total = db.Manifestacao.ToList().Count;
+            return View(db.Manifestacao.ToList());
         }
 
         public ActionResult About()

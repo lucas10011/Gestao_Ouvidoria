@@ -80,7 +80,7 @@ namespace Gestao_Ouvidoria.Controllers
                 db.RespostaManifestacao.Add(respostaManifestacao);
                 db.SaveChanges();
 
-                return RedirectToAction("Encaminhar", new { id = respostaManifestacao.Id });
+                return RedirectToAction("Encaminhar", new { id = manifestacao.Id });
             }
 
             ViewBag.Message = "ERROR";
@@ -96,10 +96,12 @@ namespace Gestao_Ouvidoria.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
            
-            RespostaManifestacao respostaManifestacao = db.RespostaManifestacao.Find(id);
-            ViewBag.RespostaManifestacao = respostaManifestacao;
-            Manifestacao manifestacao = db.Manifestacao.Find(respostaManifestacao.IdManifestacao);
+          
+            Manifestacao manifestacao = db.Manifestacao.Find(id);
             ViewBag.Manifestacao = manifestacao;
+            RespostaManifestacao respostaManifestacao = db.RespostaManifestacao.FirstOrDefault(e => e.IdManifestacao == manifestacao.Id);
+            ViewBag.RespostaManifestacao = respostaManifestacao;
+
 
             List<Setor> setores = Enum.GetValues(typeof(Setor)).Cast<Setor>().ToList();
             ViewBag.setores = new SelectList(setores);
@@ -108,8 +110,6 @@ namespace Gestao_Ouvidoria.Controllers
             {
                 return HttpNotFound();
             }
-
-       
 
             return View();
         }

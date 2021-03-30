@@ -8,13 +8,13 @@ namespace Gestao_Ouvidoria.Models
 {
     public enum TipoStatus
     {
-        [Display(Name = "Respondida(s)")]
+        [Display(Name = "Respondida")]
         Respondida,
-        [Display(Name = "Vencida(s)")]
+        [Display(Name = "Vencida")]
         Vencida,
-        [Display(Name = "Pendente(s)")]
+        [Display(Name = "Pendente")]
         Pendente,
-        [Display(Name = "Excluida(s)")]
+        [Display(Name = "Excluida")]
         Excluida
     }
 }

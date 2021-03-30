@@ -8,11 +8,13 @@ namespace Gestao_Ouvidoria.Models
 {
     public enum TipoSolicitacao
     {
+        [Display(Name = "Elogio")]
         Elogio,
         [Display(Name = "Reclamação")]
         Reclamacao,
         [Display(Name = "Sugestão")]
         Sugestao,
+        [Display(Name = "Outro")]
         Outro
 
     }

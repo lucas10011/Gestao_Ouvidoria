@@ -55,10 +55,12 @@ namespace Gestao_Ouvidoria.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Campus,Curso,TipoSolicitacao,Setor,Assunto,ManifestacaoConteudo,Created,Modified,Status,IdPerfil")] Manifestacao manifestacao)
+        public ActionResult Create([Bind(Include = "Id,Campus,Curso,TipoSolicitacao,Setor,Assunto,ManifestacaoConteudo,Status,IdPerfil")] Manifestacao manifestacao)
         {
             if (ModelState.IsValid)
             {
+                manifestacao.Created = DateTime.Now;
+                manifestacao.Modified = DateTime.Now;
                 db.Manifestacao.Add(manifestacao);
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -68,53 +70,6 @@ namespace Gestao_Ouvidoria.Controllers
             return View(manifestacao);
         }
 
-        // GET: Manifestacao/Edit/5
-        public ActionResult Edit(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Manifestacao manifestacao = db.Manifestacao.Find(id);
-            if (manifestacao == null)
-            {
-                return HttpNotFound();
-            }
-            ViewBag.IdPerfil = new SelectList(db.Perfil, "Id", "Nome", manifestacao.IdPerfil);
-            return View(manifestacao);
-        }
-
-        // POST: Manifestacao/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Campus,Curso,TipoSolicitacao,Setor,Assunto,ManifestacaoConteudo,Created,Modified,Status,IdPerfil")] Manifestacao manifestacao)
-        {
-            if (ModelState.IsValid)
-            {
-                db.Entry(manifestacao).State = EntityState.Modified;
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
-            ViewBag.IdPerfil = new SelectList(db.Perfil, "Id", "Nome", manifestacao.IdPerfil);
-            return View(manifestacao);
-        }
-
-        // GET: Manifestacao/Delete/5
-        public ActionResult Delete(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Manifestacao manifestacao = db.Manifestacao.Find(id);
-            if (manifestacao == null)
-            {
-                return HttpNotFound();
-            }
-            return View(manifestacao);
-        }
 
         // POST: Manifestacao/Delete/5
         [HttpPost, ActionName("Delete")]
@@ -122,7 +77,8 @@ namespace Gestao_Ouvidoria.Controllers
         public ActionResult DeleteConfirmed(int id)
         {
             Manifestacao manifestacao = db.Manifestacao.Find(id);
-            db.Manifestacao.Remove(manifestacao);
+            manifestacao.Status = TipoStatus.Excluida;
+            db.Entry(manifestacao).State = EntityState.Modified;
             db.SaveChanges();
             return RedirectToAction("Index");
         }

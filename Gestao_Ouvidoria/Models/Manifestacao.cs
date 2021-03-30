@@ -35,9 +35,11 @@ namespace Gestao_Ouvidoria.Models
         public string ManifestacaoConteudo { get; set; }
 
         [Display(Name = "Cadastrado em")]
+        [DataType(DataType.Date), DisplayFormat(DataFormatString = "{0:HH:mm dd/MM/yyyy}", ApplyFormatInEditMode = true)]
         public DateTime Created { get; set; }
 
         [Display(Name = "Modificado em")]
+        [DataType(DataType.Date), DisplayFormat(DataFormatString = "{0:HH:mm dd/MM/yyyy}", ApplyFormatInEditMode = true)]
         public DateTime Modified { get; set; }
 
         [Display(Name = "Status")]

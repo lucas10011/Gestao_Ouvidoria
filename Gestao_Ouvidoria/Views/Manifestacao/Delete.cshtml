@@ -1,104 +1,125 @@
 ﻿@model Gestao_Ouvidoria.Models.Manifestacao
 
-@{
-    ViewBag.Title = "Delete";
-}
 
-<h2>Delete</h2>
+<table class="tab_cadre" width="700">
+    <tbody>
+        <tr>
+            <th colspan="3">Manifestação</th>
+        </tr>
+        <tr class="tab_bg_1">
+            <td colspan="3" style="text-align: center; vertical-align: middle;">
+                <img src="../../Imgs/logo.png" alt="" class="img-fluid" style="height:100px;">
+            </td>
+        </tr>
 
-<h3>Are you sure you want to delete this?</h3>
-<div>
-    <h4>Manifestacao</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Perfil.Nome)
-        </dt>
+        <tr class="tab_bg_1">
+            <td>@Html.DisplayNameFor(model => model.Perfil.Nome)</td>
+            <td>
+                @Html.DisplayFor(model => model.Perfil.Nome)
+            </td>
+            <td colspan="2"></td>
+        </tr>
+        <tr class="tab_bg_1">
+            <td>@Html.DisplayNameFor(model => model.Perfil.Email)</td>
+            <td>
+                @Html.DisplayFor(model => model.Perfil.Email)
+            </td>
+            <td colspan="2"></td>
+        </tr>
+        <tr class="tab_bg_1">
+            <td>@Html.DisplayNameFor(model => model.Perfil.Telefone)</td>
+            <td>
+                @Html.DisplayFor(model => model.Perfil.Telefone)
+            </td>
+            <td colspan="2"></td>
+        </tr>
+        <tr class="tab_bg_1">
+            <td>@Html.DisplayNameFor(model => model.Perfil.Celular)</td>
+            <td>
+                @Html.DisplayFor(model => model.Perfil.Celular)
+            </td>
+            <td colspan="2"></td>
+        </tr>
+        <tr class="tab_bg_1">
+            <td>@Html.DisplayNameFor(model => model.Perfil.TipoPerfil)</td>
+            <td>
+                @Html.DisplayFor(model => model.Perfil.TipoPerfil)
+            </td>
+            <td colspan="2"></td>
+        </tr>
 
-        <dd>
-            @Html.DisplayFor(model => model.Perfil.Nome)
-        </dd>
+        <tr class="tab_bg_1">
+            <td>@Html.DisplayNameFor(model => model.Campus)</td>
+            <td>@Html.DisplayFor(model => model.Campus)</td>
+            <td colspan="2"></td>
+        </tr>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Campus)
-        </dt>
+        <tr class="tab_bg_1">
+            <td>@Html.DisplayNameFor(model => model.Curso)</td>
+            <td>@Html.DisplayFor(model => model.Curso)</td>
+            <td colspan="2"></td>
+        </tr>
 
-        <dd>
-            @Html.DisplayFor(model => model.Campus)
-        </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Curso)
-        </dt>
+        <tr class="tab_bg_1">
+            <td> @Html.DisplayNameFor(model => model.TipoSolicitacao)</td>
+            <td> @Html.DisplayFor(model => model.TipoSolicitacao)</td>
+            <td colspan="2"></td>
+        </tr>
 
-        <dd>
-            @Html.DisplayFor(model => model.Curso)
-        </dd>
+        <tr class="tab_bg_1">
+            <td>@Html.DisplayNameFor(model => model.Setor)</td>
+            <td>@Html.DisplayFor(model => model.Setor)</td>
+            <td colspan="2"></td>
+        </tr>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.TipoSolicitacao)
-        </dt>
+        <tr class="tab_bg_1">
+            <td>@Html.DisplayNameFor(model => model.Assunto)</td>
+            <td>@Html.DisplayFor(model => model.Assunto)</td>
+            <td colspan="2"></td>
+        </tr>
 
-        <dd>
-            @Html.DisplayFor(model => model.TipoSolicitacao)
-        </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Setor)
-        </dt>
+        <tr class="tab_bg_1">
+            <td>@Html.DisplayNameFor(model => model.ManifestacaoConteudo) </td>
+            <td>@Html.DisplayFor(model => model.ManifestacaoConteudo)</td>
+            <td colspan="2"></td>
+        </tr>
 
-        <dd>
-            @Html.DisplayFor(model => model.Setor)
-        </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Assunto)
-        </dt>
+        <tr class="tab_bg_1">
+            <td>@Html.DisplayNameFor(model => model.Created)</td>
+            <td>@Html.DisplayFor(model => model.Created)</td>
+            <td colspan="2"></td>
+        </tr>
 
-        <dd>
-            @Html.DisplayFor(model => model.Assunto)
-        </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.ManifestacaoConteudo)
-        </dt>
+        <tr class="tab_bg_1">
+            <td>@Html.DisplayNameFor(model => model.Modified)</td>
+            <td>@Html.DisplayFor(model => model.Modified)</td>
+            <td colspan="2"></td>
+        </tr>
 
-        <dd>
-            @Html.DisplayFor(model => model.ManifestacaoConteudo)
-        </dd>
+        <tr class="tab_bg_1">
+            <td>@Html.DisplayNameFor(model => model.Status) </td>
+            <td>@Html.DisplayFor(model => model.Status)</td>
+            <td colspan="2"></td>
+        </tr>
+        <tr>
+            <td>
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Created)
-        </dt>
+                    <div class="form-actions no-color">
+                        <input type="submit" value="Delete" class="btn btn-danger" /> 
+                    </div>
+                }
+            </td>
+        </tr>
 
-        <dd>
-            @Html.DisplayFor(model => model.Created)
-        </dd>
+    </tbody>
+</table>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Modified)
-        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Modified)
-        </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Status)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Status)
-        </dd>
-
-    </dl>
-
-    @using (Html.BeginForm()) {
-        @Html.AntiForgeryToken()
-
-        <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "Index")
-        </div>
-    }
-</div>

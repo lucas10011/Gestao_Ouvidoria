@@ -72,6 +72,20 @@ textarea {
     background-color: #ffffff;
 }
 
+.card_cadastro {
+    padding: 10px;
+    margin: 0px auto;
+    margin-top:20px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -o-border-radius: 4px;
+    border: 1px solid #cccccc;
+    z-index: 1;
+    text-align: left;
+    font-size: 11px;
+    background-color: #ffffff;
+}
+
 .tab_cadre_fixe, .tab_cadre_fixehov {
     margin: 0 auto 10px auto;
     -moz-border-radius: 4px;
@@ -114,6 +128,7 @@ textarea {
         padding: 2px;
         border-bottom: 1px solid #cccccc;
         padding: 2px;
+        color:white;
     }
 
     .tab_cadre td, .tab_cadre_fixe td, .tab_cadre_fixehov td, .tab_cadrehov td, .tab_cadrehov_pointer td, .tab_cadre_report td {
@@ -191,3 +206,62 @@ textarea {
         background-color: #FFF2C2;
         cursor: pointer;
     }
+
+.dataTables_paginate {
+    float: left !important;
+}
+
+.table-primary {
+    background-color: rgb(184, 218, 255);
+}
+
+.table-warning {
+    background-color: rgb(255, 238, 186);
+}
+
+.table-success {
+    background-color: rgb(195, 230, 203);
+}
+
+.table-danger {
+    background-color: rgb(245, 198, 203);
+}
+
+.imglogo {
+    height: 100px;
+    padding: 5px;
+}
+
+h3 {
+    color: rgb(76, 126, 171);
+    font-weight: 600;
+}
+
+.wrapperstatus {
+    background-color: rgb(235,233,238);
+    border-radius: 5px;
+}
+
+    .wrapperstatus > p {
+        font-weight: 700;
+    }
+
+.statusrepondido {
+    color: forestgreen
+}
+
+.statusvencido {
+    color: orange
+}
+
+.statuspendente {
+    color: cornflowerblue
+}
+
+.statusexcluido {
+    color: red
+}
+
+#myTable > thead > tr > th {
+    color: rgb(76, 126, 171);
+}

@@ -9,66 +9,7 @@
 }
 
 <br />
-<style>
-    .dataTables_paginate {
-        float: left !important;
-    }
 
-    .table-primary {
-        background-color: rgb(184, 218, 255);
-    }
-
-    .table-warning {
-        background-color: rgb(255, 238, 186);
-    }
-
-    .table-success {
-        background-color: rgb(195, 230, 203);
-    }
-
-    .table-danger {
-        background-color: rgb(245, 198, 203);
-    }
-
-    .imglogo {
-        height: 100px;
-        padding: 5px;
-    }
-
-    h3 {
-        color: rgb(76, 126, 171);
-        font-weight: 600;
-    }
-
-    .wrapperstatus {
-        background-color: rgb(235,233,238);
-        border-radius: 5px;
-    }
-
-        .wrapperstatus > p {
-            font-weight: 700;
-        }
-
-    .statusrepondido {
-        color: forestgreen
-    }
-
-    .statusvencido {
-        color: orange
-    }
-
-    .statuspendente {
-        color: cornflowerblue
-    }
-
-    .statusexcluido {
-        color: red
-    }
-
-    #myTable > thead > tr > th {
-        color: rgb(76, 126, 171);
-    }
-</style>
 <div class="container" style="background-color:white;padding:20px; border-radius: 10px;">
 
     <div class="row">
@@ -81,7 +22,9 @@
             </div>
         </div>
         <div class="col-lg-6">
-            <button type="button" class="btn btn-primary pull-right">Anotar Manifestação</button>
+            <a href='@Url.Action("Create", "Manifestacao")' class="btn btn-primary pull-right">
+                Anotar Manifestação
+            </a>
         </div>
     </div>
     <div class="row">

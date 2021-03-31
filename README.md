@@ -37,8 +37,13 @@ Passo1: Abrir o cmd e executar o seguinte comando:
   SqlLocalDB.exe create "MSSQLLocalDB"
   
   ```
-
-Passo2: Ir até o 'Package Manager Console' e executar o seguinte comando:
+ Passo2: Executar a instance com seguinte comando:
+  ```
+  SqlLocalDb.exe start
+  
+  ```
+  
+Passo3: Ir até o 'Package Manager Console' e executar o seguinte comando:
   ```
   Update-Database -Verbose
   

@@ -1,4 +1,5 @@
 ﻿@model Gestao_Ouvidoria.Models.Manifestacao
+@using Gestao_Ouvidoria.Helpers
 
 
 <table class="tab_cadre" width="700">
@@ -42,9 +43,7 @@
         </tr>
         <tr class="tab_bg_1">
             <td>@Html.DisplayNameFor(model => model.Perfil.TipoPerfil)</td>
-            <td>
-                @Html.DisplayFor(model => model.Perfil.TipoPerfil)
-            </td>
+            <td>@Html.DisplayFor(model => model.Perfil.TipoPerfil)</td>
             <td colspan="2"></td>
         </tr>
 

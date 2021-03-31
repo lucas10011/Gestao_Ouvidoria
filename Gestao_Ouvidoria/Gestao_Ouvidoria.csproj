@@ -128,6 +128,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\ManifestacaoController.cs" />
+    <Compile Include="Controllers\PerfilController.cs" />
     <Compile Include="Controllers\RespostaManifestacaoController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -203,6 +204,7 @@
     <Content Include="Imgs\logobranco.png" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\datatable.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
@@ -233,6 +235,9 @@
     <Content Include="Views\RespostaManifestacao\Details.cshtml" />
     <Content Include="Views\RespostaManifestacao\Index.cshtml" />
     <Content Include="Views\RespostaManifestacao\Encaminhar.cshtml" />
+    <Content Include="Views\Perfil\Create.cshtml" />
+    <Content Include="Views\Perfil\Delete.cshtml" />
+    <Content Include="Views\Perfil\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

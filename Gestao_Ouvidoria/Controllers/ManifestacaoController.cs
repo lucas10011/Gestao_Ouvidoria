@@ -39,12 +39,13 @@ namespace Gestao_Ouvidoria.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Campus,Curso,TipoSolicitacao,Setor,Assunto,ManifestacaoConteudo,Status,IdPerfil")] Manifestacao manifestacao)
+        public ActionResult Create([Bind(Include = "Id,Campus,Curso,TipoSolicitacao,Setor,Assunto,ManifestacaoConteudo,IdPerfil")] Manifestacao manifestacao)
         {
             if (ModelState.IsValid)
             {
                 manifestacao.Created = DateTime.Now;
                 manifestacao.Modified = DateTime.Now;
+                manifestacao.Status = TipoStatus.Pendente;
                 manifestacao.StatusSetor = TipoStatusSetor.NaoEncaminhado;
                 db.Manifestacao.Add(manifestacao);
                 db.SaveChanges();

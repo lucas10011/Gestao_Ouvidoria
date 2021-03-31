@@ -6,8 +6,10 @@ using System.Data.Entity;
 using System.IO;
 using System.Linq;
 using System.Net;
+using System.Text;
 using System.Web;
 using System.Web.Mvc;
+using Gestao_Ouvidoria.Helpers;
 using Gestao_Ouvidoria.Models;
 
 namespace Gestao_Ouvidoria.Controllers
@@ -66,10 +68,13 @@ namespace Gestao_Ouvidoria.Controllers
                 {
                     try
                     {
-                        string path = Path.Combine(Server.MapPath("~/Imgs"),
+                        string folder = "~/Arquivo/"+manifestacao.Id.ToString();
+                        Directory.CreateDirectory(Server.MapPath(folder));
+                        string pathFile = Path.Combine(Server.MapPath(folder),
                            Path.GetFileName(file.FileName));
-                        respostaManifestacao.Arquivo = path;
-                        file.SaveAs(path);
+                        
+                        respostaManifestacao.Arquivo = pathFile;
+                        file.SaveAs(pathFile);
 
                         ViewBag.Message = "Your message for success";
                     }
@@ -88,7 +93,6 @@ namespace Gestao_Ouvidoria.Controllers
                 return RedirectToAction("Encaminhar", new { id = manifestacao.Id });
             }
 
-            ViewBag.Message = "ERROR";
             return View(respostaManifestacao);
         }
 
@@ -102,7 +106,6 @@ namespace Gestao_Ouvidoria.Controllers
 
             RespostaManifestacao respostaManifestacao = db.RespostaManifestacao.Find(id);
    
-
             if (respostaManifestacao == null)
             {
                 return HttpNotFound();
@@ -137,6 +140,24 @@ namespace Gestao_Ouvidoria.Controllers
             return View();
         }
 
+        // POST: RespostaManifestacao/Create
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Encaminhar(Manifestacao manifestacao)
+        {
+            Manifestacao manifestacaoRow = db.Manifestacao.Find(manifestacao.Id);
+            ViewBag.Manifestacao = manifestacaoRow;
+            RespostaManifestacao respostaManifestacao = db.RespostaManifestacao.FirstOrDefault(e => e.IdManifestacao == manifestacao.Id);
+            ViewBag.RespostaManifestacao = respostaManifestacao;
+
+            manifestacaoRow.StatusSetor = TipoStatusSetor.Encaminhado;
+            db.Entry(manifestacaoRow).State = EntityState.Modified;
+            db.SaveChanges();
+
+            return RedirectToAction("Index");
+        }
 
         protected override void Dispose(bool disposing)
         {

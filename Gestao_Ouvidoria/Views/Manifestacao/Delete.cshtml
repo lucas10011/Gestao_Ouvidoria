@@ -111,6 +111,7 @@
             <td colspan="2"></td>
         </tr>
         <tr>
+            <td colspan="2"></td>
             <td>
                 @{
                     if (!(@ViewBag.ButtonDisabled))
@@ -120,7 +121,7 @@
                             @Html.AntiForgeryToken()
 
                             <div class="form-actions no-color">
-                                <input type="submit" value="Delete" class="btn btn-danger" />
+                                <input type="submit" value="Delete" class="btn btn-danger pull-right" />
                             </div>
                         }
                     }

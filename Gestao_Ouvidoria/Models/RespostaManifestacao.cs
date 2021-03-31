@@ -14,7 +14,7 @@ namespace Gestao_Ouvidoria.Models
         [Display(Name = "Protocolo")]
         public int Id { get; set; }
 
-        [Required(ErrorMessage = "Preencha a Manifestação.")]
+        [Required(ErrorMessage = "Preencha a Resposta da Manifestação.")]
         [Display(Name = "Manifestação Resposta")]
         public string ManifestacaoResposta { get; set; }
 

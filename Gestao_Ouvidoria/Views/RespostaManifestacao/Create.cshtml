@@ -80,7 +80,7 @@
 
 
         <tr class="tab_bg_1">
-            <td> Tipo Solicitação</td>
+            <td>Tipo Solicitação</td>
             <td>
                 @{
                     var tiposolicitacao = EnumHelperAttribute.GetDisplayName(@ViewBag.Manifestacao.TipoSolicitacao);
@@ -209,7 +209,7 @@
 
                     <div class="form-group">
                         <div class="col-md-offset-2 col-md-10">
-                            <input type="submit" value="Enviar Resposta" class="btn btn-primary" />
+                            <input type="submit" value="Enviar Resposta" class="btn btn-primary pull-right" />
                         </div>
                     </div>
                 </div>
@@ -220,14 +220,6 @@
 
 </div>
 
-
-
-
-
-
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")

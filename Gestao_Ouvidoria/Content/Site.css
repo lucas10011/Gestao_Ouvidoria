@@ -1,5 +1,4 @@
 ﻿body {
-    padding-top: 50px;
     padding-bottom: 20px;
     background: #dfdfdf repeat-x;
 }
@@ -8,11 +7,21 @@
 
 
 .navbar {
-    background: #1b8fca;
-    border-color: #1b8fca;
+    background: #3c8dbc;
+    border-color: #3c8dbc;
+    color: white;
+}
+.linknavbar {
+    font-weight:200 !important;
+    color:white !important;
 }
 .navbar-inverse .navbar-nav > li > a {
-    color:white;
+    color: white;
+}
+
+.navbar-brand {
+    font-weight: 700;
+    color: white !important;
 }
 
 

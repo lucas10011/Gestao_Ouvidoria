@@ -31,7 +31,7 @@ namespace Gestao_Ouvidoria.Models
         public string Assunto { get; set; }
 
         [Required(ErrorMessage = "Preencha a Manifestação.")]
-        [Display(Name = "Manifestacao")]
+        [Display(Name = "Manifestação")]
         public string ManifestacaoConteudo { get; set; }
 
         [Display(Name = "Cadastrado em")]
@@ -45,7 +45,7 @@ namespace Gestao_Ouvidoria.Models
         [Display(Name = "Status")]
         public TipoStatus Status { get; set; }
 
-        [Display(Name = "StatusSetor")]
+        [Display(Name = "Status Setor")]
         public TipoStatusSetor StatusSetor { get; set; }
 
         [Required]

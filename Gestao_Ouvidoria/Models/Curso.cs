@@ -14,6 +14,7 @@ namespace Gestao_Ouvidoria.Models
         ArquiteturaUrbanismo,
         [Display(Name = "Biomedicina")]
         Biomedicina,
+        [Display(Name = "Direito")]
         Direito,
         [Display(Name = "Engenharia Civil")]
         EngenhariaCivil,
@@ -41,10 +42,11 @@ namespace Gestao_Ouvidoria.Models
         Pedagogia,
         [Display(Name = "Nutrição")]
         Nutricao,
+        [Display(Name = "Psicologia")]
         Psicologia,
         [Display(Name = "Serviço Social")]
         ServicoSocial,
-        [Display(Name = "Sistemas de Informção")]
+        [Display(Name = "Sistemas de Informação")]
         SistemasdeInformacao
     }
 }

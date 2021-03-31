@@ -15,8 +15,10 @@
     color:white;
 }
 
-.navbar-inverse .navbar-brand{
-    color:white;
+
+
+.navbar-inverse .navbar-brand {
+    color: white;
 }
 /* Set padding to keep content from hitting the edges */
 .body-content {
@@ -247,19 +249,23 @@ h3 {
     }
 
 .statusrepondido {
-    color: forestgreen
+    color: forestgreen;
+    padding-right: 12px;
 }
 
 .statusvencido {
-    color: orange
+    color: orange;
+    padding-right: 12px;
 }
 
 .statuspendente {
-    color: cornflowerblue
+    color: cornflowerblue;
+    padding-right: 12px;
 }
 
 .statusexcluido {
-    color: red
+    color: red;
+    padding-right: 12px;
 }
 
 #myTable > thead > tr > th {

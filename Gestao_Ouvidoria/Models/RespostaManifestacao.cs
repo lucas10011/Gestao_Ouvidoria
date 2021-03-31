@@ -22,7 +22,7 @@ namespace Gestao_Ouvidoria.Models
         [Display(Name = "Arquivo")]
         public string Arquivo { get; set; }
 
-        [Required]
+
         [ForeignKey("Manifestacao")]
         public int IdManifestacao { get; set; }
 

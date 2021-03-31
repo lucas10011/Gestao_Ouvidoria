@@ -127,7 +127,6 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManifestacaoController.cs" />
     <Compile Include="Controllers\RespostaManifestacaoController.cs" />
     <Compile Include="Global.asax.cs">
@@ -171,6 +170,10 @@
     <Compile Include="Migrations\202103282236449_add-ArquivoPost2-model-RespostaManifestacao.designer.cs">
       <DependentUpon>202103282236449_add-ArquivoPost2-model-RespostaManifestacao.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202103302232374_TipoStatusSetor_Manifestacao.cs" />
+    <Compile Include="Migrations\202103302232374_TipoStatusSetor_Manifestacao.designer.cs">
+      <DependentUpon>202103302232374_TipoStatusSetor_Manifestacao.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Campus.cs" />
     <Compile Include="Models\Curso.cs" />
@@ -182,6 +185,7 @@
     <Compile Include="Models\TipoPerfil.cs" />
     <Compile Include="Models\TipoSolicitacao.cs" />
     <Compile Include="Models\TipoStatus.cs" />
+    <Compile Include="Models\TipoStatusSetor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -194,6 +198,7 @@
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Imgs\logo.png" />
+    <Content Include="Imgs\logobranco.png" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
@@ -218,18 +223,11 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Manifestacao\Create.cshtml" />
     <Content Include="Views\Manifestacao\Delete.cshtml" />
-    <Content Include="Views\Manifestacao\Details.cshtml" />
-    <Content Include="Views\Manifestacao\Edit.cshtml" />
     <Content Include="Views\Manifestacao\Index.cshtml" />
     <Content Include="Views\RespostaManifestacao\Create.cshtml" />
-    <Content Include="Views\RespostaManifestacao\Delete.cshtml" />
     <Content Include="Views\RespostaManifestacao\Details.cshtml" />
-    <Content Include="Views\RespostaManifestacao\Edit.cshtml" />
     <Content Include="Views\RespostaManifestacao\Index.cshtml" />
     <Content Include="Views\RespostaManifestacao\Encaminhar.cshtml" />
   </ItemGroup>
@@ -276,6 +274,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202103282236449_add-ArquivoPost2-model-RespostaManifestacao.resx">
       <DependentUpon>202103282236449_add-ArquivoPost2-model-RespostaManifestacao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202103302232374_TipoStatusSetor_Manifestacao.resx">
+      <DependentUpon>202103302232374_TipoStatusSetor_Manifestacao.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -6,7 +6,7 @@
 <table class="tab_cadre" width="700">
     <tbody>
         <tr>
-            <th colspan="3">Manifestação<th>
+            <th colspan="3">Manifestação</th>
         </tr>
 
         <tr class="tab_bg_1">
@@ -137,6 +137,17 @@
                 @{
                     var status = EnumHelperAttribute.GetDisplayName(@ViewBag.Manifestacao.Status);
                     @Html.Raw(status);
+                }
+
+            </td>
+            <td colspan="2"></td>
+        </tr>
+        <tr class="tab_bg_1">
+            <td>Status Encaminhado para setor</td>
+            <td>
+                @{
+                    var statusSetor = EnumHelperAttribute.GetDisplayName(@ViewBag.Manifestacao.StatusSetor);
+                    @Html.Raw(statusSetor);
                 }
 
             </td>

@@ -26,22 +26,6 @@ namespace Gestao_Ouvidoria.Controllers
             return View(manifestacoes.ToList());
         }
 
-        // GET: Manifestacao/Details/5
-        public ActionResult Details(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-          
-            Manifestacao manifestacao = db.Manifestacao.Find(id);
-           
-            if (manifestacao == null)
-            {
-                return HttpNotFound();
-            }
-            return View(manifestacao);
-        }
 
         // GET: Manifestacao/Create
         public ActionResult Create()
@@ -61,6 +45,7 @@ namespace Gestao_Ouvidoria.Controllers
             {
                 manifestacao.Created = DateTime.Now;
                 manifestacao.Modified = DateTime.Now;
+                manifestacao.StatusSetor = TipoStatusSetor.NaoEncaminhado;
                 db.Manifestacao.Add(manifestacao);
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -70,6 +55,22 @@ namespace Gestao_Ouvidoria.Controllers
             return View(manifestacao);
         }
 
+
+        // GET: Manifestacao/Delete/5
+        public ActionResult Delete(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Manifestacao manifestacao = db.Manifestacao.Find(id);
+            if (manifestacao == null)
+            {
+                return HttpNotFound();
+            }
+            ViewBag.ButtonDisabled = (manifestacao.Status == TipoStatus.Respondida || manifestacao.StatusSetor == TipoStatusSetor.Encaminhado);
+            return View(manifestacao);
+        }
 
         // POST: Manifestacao/Delete/5
         [HttpPost, ActionName("Delete")]

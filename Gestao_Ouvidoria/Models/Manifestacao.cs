@@ -45,6 +45,9 @@ namespace Gestao_Ouvidoria.Models
         [Display(Name = "Status")]
         public TipoStatus Status { get; set; }
 
+        [Display(Name = "StatusSetor")]
+        public TipoStatusSetor StatusSetor { get; set; }
+
         [Required]
         [ForeignKey("Perfil")]
         public int IdPerfil { get; set; }

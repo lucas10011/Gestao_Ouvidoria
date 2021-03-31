@@ -105,16 +105,27 @@
             <td>@Html.DisplayFor(model => model.Status)</td>
             <td colspan="2"></td>
         </tr>
+        <tr class="tab_bg_1">
+            <td>@Html.DisplayNameFor(model => model.StatusSetor) </td>
+            <td>@Html.DisplayFor(model => model.StatusSetor)</td>
+            <td colspan="2"></td>
+        </tr>
         <tr>
             <td>
-                @using (Html.BeginForm())
-                {
-                    @Html.AntiForgeryToken()
+                @{
+                    if (!(@ViewBag.ButtonDisabled))
+                    {
+                        using (Html.BeginForm())
+                        {
+                            @Html.AntiForgeryToken()
 
-                    <div class="form-actions no-color">
-                        <input type="submit" value="Delete" class="btn btn-danger" /> 
-                    </div>
+                            <div class="form-actions no-color">
+                                <input type="submit" value="Delete" class="btn btn-danger" />
+                            </div>
+                        }
+                    }
                 }
+
             </td>
         </tr>
 

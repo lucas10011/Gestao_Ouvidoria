@@ -39,8 +39,9 @@ namespace Gestao_Ouvidoria.Controllers
             }
 
             ViewBag.IdManifestacao = new SelectList(db.Manifestacao, "Id", "Assunto", id);
+            List<Setor> setores = Enum.GetValues(typeof(Setor)).Cast<Setor>().ToList();
+            ViewBag.setores = new SelectList(setores);
 
-           
             return View();
         }
 
@@ -55,6 +56,7 @@ namespace Gestao_Ouvidoria.Controllers
             Manifestacao manifestacao = db.Manifestacao.Find(respostaManifestacao.IdManifestacao);
             ViewBag.Manifestacao = manifestacao;
             ViewBag.IdManifestacao = new SelectList(db.Manifestacao, "Id", "Assunto", respostaManifestacao.IdManifestacao);
+          
 
             if (ModelState.IsValid)
             {
@@ -75,6 +77,8 @@ namespace Gestao_Ouvidoria.Controllers
                         ViewBag.Message = "ERROR:" + ex.Message.ToString();
                     }
                 }
+                
+
                 manifestacao.Status = TipoStatus.Respondida;
                 db.Entry(manifestacao).State = EntityState.Modified;
                 db.RespostaManifestacao.Add(respostaManifestacao);
@@ -84,6 +88,24 @@ namespace Gestao_Ouvidoria.Controllers
             }
 
             ViewBag.Message = "ERROR";
+            return View(respostaManifestacao);
+        }
+
+        // GET: Manifestacao/Details/5
+        public ActionResult Details(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+
+            RespostaManifestacao respostaManifestacao = db.RespostaManifestacao.Find(id);
+   
+
+            if (respostaManifestacao == null)
+            {
+                return HttpNotFound();
+            }
             return View(respostaManifestacao);
         }
 
@@ -114,64 +136,6 @@ namespace Gestao_Ouvidoria.Controllers
             return View();
         }
 
-        // GET: RespostaManifestacao/Edit/5
-        public ActionResult Edit(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            RespostaManifestacao respostaManifestacao = db.RespostaManifestacao.Find(id);
-            if (respostaManifestacao == null)
-            {
-                return HttpNotFound();
-            }
-            ViewBag.IdManifestacao = new SelectList(db.Manifestacao, "Id", "Assunto", respostaManifestacao.IdManifestacao);
-            return View(respostaManifestacao);
-        }
-
-        // POST: RespostaManifestacao/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,ManifestacaoResposta,Arquivo,IdManifestacao")] RespostaManifestacao respostaManifestacao)
-        {
-            if (ModelState.IsValid)
-            {
-                db.Entry(respostaManifestacao).State = EntityState.Modified;
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
-            ViewBag.IdManifestacao = new SelectList(db.Manifestacao, "Id", "Assunto", respostaManifestacao.IdManifestacao);
-            return View(respostaManifestacao);
-        }
-
-        // GET: RespostaManifestacao/Delete/5
-        public ActionResult Delete(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            RespostaManifestacao respostaManifestacao = db.RespostaManifestacao.Find(id);
-            if (respostaManifestacao == null)
-            {
-                return HttpNotFound();
-            }
-            return View(respostaManifestacao);
-        }
-
-        // POST: RespostaManifestacao/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
-        {
-            RespostaManifestacao respostaManifestacao = db.RespostaManifestacao.Find(id);
-            db.RespostaManifestacao.Remove(respostaManifestacao);
-            db.SaveChanges();
-            return RedirectToAction("Index");
-        }
 
         protected override void Dispose(bool disposing)
         {

@@ -38,6 +38,7 @@ namespace Gestao_Ouvidoria.Controllers
                 return HttpNotFound();
             }
 
+            ViewBag.FormDisabled = (manifestacao.Status != TipoStatus.Pendente);
             ViewBag.IdManifestacao = new SelectList(db.Manifestacao, "Id", "Assunto", id);
             List<Setor> setores = Enum.GetValues(typeof(Setor)).Cast<Setor>().ToList();
             ViewBag.setores = new SelectList(setores);

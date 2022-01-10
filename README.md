@@ -2,7 +2,7 @@
 
 Desenvolvimento do projeto para teste de aptidão de um sistema de Gestão de Ouvidoria em Asp.NET MVC & Entity Framework.
 
-Projeto hospedado nesse link http://gestaoouvidoria.somee.com/
+
 
 ## Recursos Utilizados
 
